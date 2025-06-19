@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:foodpicker/checkOutPage.dart";
 
 class FoodItem {
   final String title;
@@ -142,7 +143,14 @@ class _FoodScreenState extends State<FoodScreen> {
                         ),
                       ),
                       ElevatedButton(
-                        onPressed: nextItem,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CheckoutScreenPage(),
+                            ),
+                          );
+                        },
                         child: Icon(Icons.check),
                         style: ElevatedButton.styleFrom(
                           shape: CircleBorder(),
